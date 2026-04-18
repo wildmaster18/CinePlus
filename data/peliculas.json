@@ -2,25 +2,105 @@
   {
     "id": 1,
     "titulo": "Dune",
+    "generos": ["Ciencia Ficción", "Aventura"],
     "imagen": "dune.jpg",
-    "genero": "Aventura",
-    "sinopsis": "Un joven emprende una misión para salvar su mundo.",
-    "trailer": "https://www.youtube.com/embed/mSY_NbSmaUI"
+    "sinopsis": "Paul Atreides, un joven brillante nacido con un destino más grande de lo que él mismo podría imaginar, debe viajar al planeta más peligroso del universo para asegurar el futuro de su familia y de su pueblo. Mientras fuerzas malévolas libran una guerra por el control del recurso más preciado del planeta, solo quienes puedan conquistar el miedo lograrán sobrevivir en este mundo hostil.",
+    "trailer": "https://www.youtube.com/embed/mSY_NbSmaUI",
+    "estreno": "2021-10-22",
+    "precios": {
+      "estreno": 4.5,
+      "normal": 2.5
+    }
   },
   {
     "id": 2,
-    "titulo": "50 primeras citas",
+    "titulo": "50 Primeras Citas",
+    "generos": ["Comedia", "Romance"],
     "imagen": "50-primeras-citas.jpg",
-    "genero": "Comedia",
-    "sinopsis": "Henry se enamora de Lucy, una mujer con pérdida de memoria a corto plazo.",
-    "trailer": "https://www.youtube.com/embed/17KJk3ErIx0"
+    "sinopsis": "Henry Roth es un veterinario marino en Hawái con fama de no comprometerse con nadie. Un día conoce a Lucy Whitmore y queda enamorado de ella. Sin embargo, Lucy sufre una condición médica que borra su memoria cada día al despertar. Así que cada mañana Henry debe conquistarla de nuevo, inventando formas creativas de ganarse su corazón sin que ella lo recuerde del día anterior.",
+    "trailer": "https://www.youtube.com/embed/17KJk3ErIx0",
+    "estreno": "2004-02-13",
+    "precios": {
+      "estreno": 4.5,
+      "normal": 2.5
+    }
   },
   {
     "id": 3,
-    "titulo": "Batman Caballero de la Noche",
+    "titulo": "Batman: El Caballero de la Noche",
+    "generos": ["Acción", "Drama"],
     "imagen": "batman-caballero-de-la-noche.webp",
-    "genero": "Acción",
-    "sinopsis": "La película comienza con el violento robo de uno de los bancos de la mafia por una banda de payasos.",
-    "trailer": "https://www.youtube.com/embed/dzQtWkpc2-c"
+    "sinopsis": "Batman retoma su lucha contra el crimen en Gotham City junto al fiscal Harvey Dent. Pero un criminal llamado el Joker aparece sembrando caos de formas que nadie podría predecir. La batalla se vuelve tanto física como moral, llevando al Caballero de la Noche al límite de sus convicciones. Una historia sobre el precio de ser un héroe en una ciudad que no siempre lo merece.",
+    "trailer": "https://www.youtube.com/embed/dzQtWkpc2-c",
+    "estreno": "2008-07-18",
+    "precios": {
+      "estreno": 4.5,
+      "normal": 2.5
+    }
+  },
+  {
+    "id": 4,
+    "titulo": "Proyecto Fin Del Mundo",
+    "generos": ["Ciencia Ficción", "Drama"],
+    "imagen": "hail-mary.jpg",
+    "sinopsis": "Ryland Grace despierta solo en una nave espacial sin recordar cómo llegó ahí ni cuál es su misión. Poco a poco recupera su memoria y descubre que fue enviado al espacio como último recurso para salvar a la humanidad de una extinción masiva. Sin equipo ni respaldo, deberá resolver el misterio de una amenaza desconocida usando únicamente sus conocimientos científicos y su ingenio para sobrevivir.",
+    "trailer": "https://www.youtube.com/embed/m08TxIsFTRI?si=dqm1FGMZoYuXa1qK",
+    "estreno": "2026-03-20",
+    "precios": {
+      "estreno": 4.5,
+      "normal": 2.5
+    }
+  },
+  {
+    "id": 5,
+    "titulo": "Hoppers: Operación Castor",
+    "generos": ["Animación", "Comedia"],
+    "imagen": "Hoppers-Operación-Castor.jpg",
+    "sinopsis": "Una amante de los animales aprovecha una tecnología revolucionaria que transfiere su conciencia al cuerpo de un castor robótico. Lo que parecía una simple aventura se convierte en una misión inesperada llena de humor, acción y sorpresas. Mientras explora el mundo animal desde adentro, descubre misterios y secretos que van mucho más allá de lo que jamás hubiera podido imaginar desde afuera.",
+    "trailer": "https://www.youtube.com/embed/F7kfhqgVeIg?si=A6tt-wUfiVfcwakS",
+    "estreno": "2026-03-28",
+    "precios": {
+      "estreno": 4.5,
+      "normal": 2.5
+    }
+  },
+  {
+    "id": 6,
+    "titulo": "Super Mario Galaxy: La Película",
+    "generos": ["Animación", "Aventura"],
+    "imagen": "mario-galaxy.jpeg",
+    "sinopsis": "La Película es una cinta animada basada en el mundo de Super Mario Bros y funciona como secuela de Super Mario Bros La Película, estrenada en 2023 y que recaudó más de 1.3 mil millones de dólares a nivel mundial. Tanto la película de 2023 como Super Mario Galaxy son producidas por Chris Meledandri, de Illumination, y Shigeru Miyamoto, de Nintendo.",
+    "trailer": "https://www.youtube.com/embed/ipzEY7c7it8?si=tlyd-UcavAePaI4e",
+    "estreno": "2026-04-01",
+    "precios": {
+      "estreno": 4.5,
+      "normal": 2.5
+    }
+  },
+  {
+    "id": 7,
+    "titulo": "Zootopia 2",
+    "generos": ["Animación", "Aventura"],
+    "imagen": "zootopia-2.jpeg",
+    "sinopsis": "Judy Hopps y Nick Wilde regresan como compañeros de policía para investigar la misteriosa llegada de reptiles a la ciudad de Zootopia. Tras ser incriminados injustamente por sus propios superiores, deben ir de incógnito por los barrios más peligrosos de la ciudad para descubrir la verdad. Una conspiración más grande de lo esperado pone en riesgo la convivencia pacífica entre todas las especies del reino animal.",
+    "trailer": "https://www.youtube.com/embed/4_KaABhCPPk?si=Am7ojqVhJFAZPBB_",
+    "estreno": "2025-11-27",
+    "precios": {
+      "estreno": 4.5,
+      "normal": 2.5
+    }
+  },
+  {
+    "id": 8,
+    "titulo": "Oppenheimer",
+    "generos": ["Acción", "Suspenso"],
+    "imagen": "oppenheimer.jpg",
+    "sinopsis": "La película narra la vida del físico J. Robert Oppenheimer y su papel decisivo en el Proyecto Manhattan durante la Segunda Guerra Mundial. Liderando un equipo de los mejores científicos del mundo, desarrolló la primera bomba atómica de la historia. La trama explora no solo el avance científico sino también el profundo dilema moral que enfrentó al ver las devastadoras consecuencias de su creación en la humanidad.",
+    "trailer": "https://www.youtube.com/embed/gMPEbJQun68?si=SFNlHPyVSTMuVoQj",
+    "estreno": "2023-06-20",
+    "precios": {
+      "estreno": 4.5,
+      "normal": 2.5
+    }
   }
 ]

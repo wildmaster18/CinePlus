@@ -1,9 +1,122 @@
+/* Define las variables de color que se usan en todo el sitio */
+:root {
+  --color-fondo: #1f1f1f;
+  --color-header: #0b0c10;
+  --color-tarjeta: #2a2a2a;
+  --color-acento: #d50808;
+  --color-texto: #ffffff;
+}
+
+/* Aplica la fuente Montserrat y el color de fondo al cuerpo de la página */
 body {
-    background-color: #f8f9fa;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+
+  /* Organiza el cuerpo en columna para que el footer quede al fondo */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Hace que el contenido principal ocupe el espacio disponible */
+main {
+  flex: 1;
+}
+
+/* Cambia el color de fondo y agrega borde inferior al navbar */
+.navbar {
+  background-color: var(--color-header) !important;
+  border-bottom: 2px solid var(--color-acento);
+}
+
+/* Aplica tamaño y color al nombre de la marca en el navbar */
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 3rem;
+  color: var(--color-texto) !important;
+}
+
+/* Aplica color gris a los enlaces del navbar */
+.navbar .nav-link {
+  font-weight: 600;
+  color: #ccc !important;
+  font-size: 1.5rem;
+  transition: color 0.2s;
+}
+
+/* Cambia el color del enlace activo y al pasar el mouse por encima */
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--color-acento) !important;
+}
+
+/* Aplica el degradado oscuro y el borde al encabezado principal */
+.encabezado-hero {
+  background: linear-gradient(135deg, var(--color-header) 0%, #151515 100%);
+  border-bottom: 3px solid var(--color-acento);
+  padding: 3rem 1rem;
+}
+
+/* Aplica el fondo oscuro, color de texto y bordes redondeados a las tarjetas */
+.card {
+  background-color: var(--color-tarjeta);
+  color: var(--color-texto);
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Mueve la tarjeta hacia arriba y agrega sombra al pasar el mouse */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Fija la altura de la imagen y agrega borde inferior rojo */
+.card img.card-img-top {
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--color-acento);
+}
+
+/* Aplica el color rojo al botón principal */
+.btn-primary {
+  background-color: var(--color-acento);
+  border-color: var(--color-acento);
+  color: #ffffff;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+/* Oscurece el botón al pasar el mouse por encima */
+.btn-primary:hover {
+  background-color: #b0060f;
+  border-color: #b0060f;
+}
+
+/* Aplica el color oscuro y borde superior al footer */
+.footer-sitio {
+  background-color: var(--color-header) !important;
+  border-top: 2px solid var(--color-acento);
+  color: #aaa;
+  font-size: 1rem;
+  padding: 1rem 0;
+  margin-top: auto;
+}
+
+/* Reduce la altura de la imagen y el tamaño del título en pantallas pequeñas */
+@media (max-width: 768px) {
+  .card img.card-img-top {
+    height: 220px;
   }
-  
-  .card img {
-    height: 250px;
-    object-fit: cover;
+  .encabezado-hero h1 {
+    font-size: 1.4rem;
   }
-  
+}

@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <title>Detalle de Película</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Carga Bootstrap para los estilos y componentes -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,37 +14,50 @@
   <body>
     <div class="container py-5">
       <div class="text-center mb-4">
+        <!-- Muestra el título de la película -->
         <h2 id="titulo" class="mb-3"></h2>
 
-        <!-- Componente: Alerta informativa -->
+        <!-- Alerta informativa fija para el visitante -->
         <div class="alert alert-info" role="alert">
           ¡Disfruta del tráiler oficial y conoce más sobre esta película!
         </div>
 
-        <!-- Tráiler embebido -->
+        <!-- Reproductor del tráiler de YouTube -->
         <div class="ratio ratio-16x9 mb-4">
           <iframe id="trailer" src="" allowfullscreen></iframe>
         </div>
       </div>
 
-      <!-- Tarjeta con sinopsis e imagen -->
+      <!-- Tarjeta con la imagen y la sinopsis de la película -->
       <div class="card mb-4">
         <div class="row g-0">
-          <div class="col-md-4">
+          <div class="col-md-3">
+            <!-- Imagen del póster de la película -->
             <img
               id="poster"
               src=""
               class="img-fluid rounded-start"
               alt="Poster de la película"
+              style="
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+                object-position: center;
+              "
             />
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
+          <div class="col-md-9">
+            <div
+              class="card-body d-flex flex-column justify-content-center"
+              style="min-height: 350px"
+            >
               <h5 class="card-title">Sinopsis</h5>
+
+              <!-- Muestra la sinopsis de la película -->
               <p id="sinopsis" class="card-text"></p>
 
-              <!-- Componente: Badge de género -->
-              <span id="genero" class="badge bg-secondary"></span>
+              <!-- Contenedor donde se insertan los badges de géneros -->
+              <div id="generos"></div>
             </div>
           </div>
         </div>
@@ -53,12 +68,15 @@
       </div>
     </div>
 
+    <!-- Carga la librería jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
       $(function () {
+        /* Lee el parámetro "id" de la URL para saber qué película mostrar */
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get("id");
 
+        /* Carga el JSON y busca la película que coincide con el id */
         $.ajax({
           url: "../data/peliculas.json",
           method: "GET",
@@ -66,11 +84,23 @@
           success: function (peliculas) {
             const peli = peliculas.find((p) => p.id == id);
             if (peli) {
+              /* Asigna el título, sinopsis y tráiler en el HTML */
               $("#titulo").text(peli.titulo);
-              $("#poster").attr("src", "../img/" + peli.imagen);
               $("#sinopsis").text(peli.sinopsis);
               $("#trailer").attr("src", peli.trailer);
-              $("#genero").text(peli.genero);
+
+              /* Construye la ruta de imagen según si es local o URL externa */
+              let rutaImg = peli.imagen.startsWith("http")
+                ? peli.imagen
+                : "../img/" + peli.imagen;
+              $("#poster").attr("src", rutaImg);
+
+              /* Recorre los géneros y genera un badge por cada uno */
+              let htmlGeneros = "";
+              for (let j = 0; j < peli.generos.length; j++) {
+                htmlGeneros += `<span class="badge bg-secondary me-1">${peli.generos[j]}</span>`;
+              }
+              $("#generos").html(htmlGeneros);
             } else {
               mostrarError();
             }
@@ -80,15 +110,16 @@
           },
         });
 
+        /* Muestra un mensaje si la película no se pudo cargar */
         function mostrarError() {
-          $("#detalle-pelicula").html(`
-          <div class="alert alert-danger text-center" role="alert">
-            No se pudo cargar la información de la película.
-          </div>
-          <div class="text-center">
-            <a href="../index.html" class="btn btn-secondary mt-3">Volver al inicio</a>
-          </div>
-        `);
+          $(".container").html(`
+            <div class="alert alert-danger text-center" role="alert">
+              No se pudo cargar la información de la película.
+            </div>
+            <div class="text-center">
+              <a href="../index.html" class="btn btn-secondary mt-3">Volver al inicio</a>
+            </div>
+          `);
         }
       });
     </script>
