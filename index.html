@@ -21,6 +21,24 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- Alerta de bienvenida: app.js la muestra solo la primera vez usando localStorage -->
+    <div
+      id="alerta-bienvenida"
+      class="alert alert-warning alert-dismissible d-none m-0 rounded-0"
+      role="alert"
+    >
+      <div class="container-fluid">
+        <strong>👋 ¡Bienvenido a CinePlus!</strong>
+        Descubre los mejores estrenos y películas en cartelera.
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Cerrar"
+        ></button>
+      </div>
+    </div>
+
     <!-- Barra de navegación principal del sitio -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid px-4">
@@ -60,9 +78,47 @@
     </header>
 
     <main class="container py-4">
-      <!-- Contenedor donde app.js inserta las tarjetas de películas -->
-      <div class="row g-4" id="lista-peliculas"></div>
+      <!-- Spinner visible mientras se espera la carga de películas -->
+      <div id="spinner-carga" class="text-center py-5">
+        <div
+          class="spinner-border"
+          role="status"
+          style="width: 3rem; height: 3rem"
+        >
+          <span class="visually-hidden">Cargando...</span>
+        </div>
+        <p class="mt-3 fw-semibold">Cargando películas, por favor espera...</p>
+      </div>
+
+      <!-- Contenedor de tarjetas, arranca oculto hasta que el AJAX termina -->
+      <div class="row g-4" id="lista-peliculas" style="display: none"></div>
     </main>
+
+    <!-- Modal para reproducir el tráiler de la película seleccionada -->
+    <div class="modal fade" id="modal-trailer" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-dark">
+          <div class="modal-header border-secondary">
+            <!-- Muestra el título de la película en el encabezado del modal -->
+            <h5 class="modal-title text-white" id="titulo-modal-trailer">
+              Tráiler
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+          <div class="modal-body p-0">
+            <!-- Reproductor del tráiler de YouTube -->
+            <div class="ratio ratio-16x9">
+              <iframe id="iframe-trailer" src="" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Pie de página del sitio -->
     <footer class="footer-sitio text-center py-3">
@@ -71,7 +127,7 @@
 
     <!-- Carga la librería jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <!-- Carga Bootstrap JS para el menú hamburguesa en móviles -->
+    <!-- Carga Bootstrap JS para el modal y el menú hamburguesa -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Carga la lógica principal del sitio -->
     <script src="js/app.js"></script>

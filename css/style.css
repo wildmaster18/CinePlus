@@ -101,6 +101,20 @@ main {
   border-color: #b0060f;
 }
 
+/* Centra el spinner verticalmente en el área de carga */
+#spinner-carga {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Aplica el color rojo al spinner de carga */
+.spinner-border {
+  color: var(--color-acento) !important;
+}
+
 /* Aplica el color oscuro y borde superior al footer */
 .footer-sitio {
   background-color: var(--color-header) !important;
