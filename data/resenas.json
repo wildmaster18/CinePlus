@@ -1,0 +1,146 @@
+[
+  {
+    "idPelicula": 1,
+    "autor": "Carlos M.",
+    "comentario": "Una obra maestra visual. La adaptación de la novela es impresionante, con una dirección impecable y una banda sonora que te envuelve completamente desde el inicio.",
+    "calificacion": 5
+  },
+  {
+    "idPelicula": 1,
+    "autor": "Sofía L.",
+    "comentario": "Buena película aunque un poco lenta al inicio. Los efectos especiales son increíbles y la música acompaña perfectamente cada escena del film.",
+    "calificacion": 4
+  },
+  {
+    "idPelicula": 1,
+    "autor": "Diego R.",
+    "comentario": "Entretenida pero no cumplió del todo mis expectativas. Faltó más desarrollo de los personajes secundarios que merecían más protagonismo.",
+    "calificacion": 3
+  },
+  {
+    "idPelicula": 2,
+    "autor": "María P.",
+    "comentario": "Romántica y divertida, perfecta para ver en pareja. Los actores tienen una química increíble que hace la historia completamente creíble y emotiva.",
+    "calificacion": 5
+  },
+  {
+    "idPelicula": 2,
+    "autor": "José A.",
+    "comentario": "Una comedia clásica muy bien ejecutada. Tiene momentos emotivos que te sorprenden cuando menos lo esperas dentro de la trama romántica.",
+    "calificacion": 4
+  },
+  {
+    "idPelicula": 2,
+    "autor": "Valeria T.",
+    "comentario": "Muy bonita historia aunque algo predecible. Aun así te atrapa con sus personajes y te deja con una sonrisa genuina al llegar al final.",
+    "calificacion": 4
+  },
+  {
+    "idPelicula": 3,
+    "autor": "Andrés G.",
+    "comentario": "La mejor película de superhéroes jamás filmada. El Joker es un personaje sin comparación posible en toda la historia del género cinematográfico.",
+    "calificacion": 5
+  },
+  {
+    "idPelicula": 3,
+    "autor": "Fernanda C.",
+    "comentario": "Épica y oscura en todos los sentidos. Nolan elevó el género a otro nivel con una historia moralmente compleja y profundamente bien construida.",
+    "calificacion": 5
+  },
+  {
+    "idPelicula": 3,
+    "autor": "Luis H.",
+    "comentario": "Extraordinaria en todos sus aspectos. El guión, la dirección y las actuaciones se combinan de manera perfecta para crear una obra única.",
+    "calificacion": 5
+  },
+  {
+    "idPelicula": 4,
+    "autor": "Camila O.",
+    "comentario": "Película que te hace pensar de verdad. Los conceptos científicos están bien integrados en la narrativa y no se sienten forzados en ningún momento.",
+    "calificacion": 5
+  },
+  {
+    "idPelicula": 4,
+    "autor": "Ricardo B.",
+    "comentario": "Muy entretenida con giros de trama inesperados. Ryan Gosling está brillante en el papel principal y la historia te mantiene enganchado hasta el final.",
+    "calificacion": 4
+  },
+  {
+    "idPelicula": 4,
+    "autor": "Natalia S.",
+    "comentario": "Impresionante aunque algo confusa al inicio. Requiere atención para entender todos los hilos de la trama que se van desarrollando a lo largo del film.",
+    "calificacion": 4
+  },
+  {
+    "idPelicula": 5,
+    "autor": "Pablo F.",
+    "comentario": "Una propuesta animada muy fresca y original. El humor funciona para todas las edades y la historia tiene momentos genuinamente emotivos y sorprendentes.",
+    "calificacion": 4
+  },
+  {
+    "idPelicula": 5,
+    "autor": "Isabella R.",
+    "comentario": "Divertida y con mucho corazón. Los personajes están bien desarrollados y la premisa de la conciencia en un animal es muy creativa y bien ejecutada.",
+    "calificacion": 4
+  },
+  {
+    "idPelicula": 5,
+    "autor": "Sebastián N.",
+    "comentario": "Buena película para ver en familia. Tiene mensajes interesantes sobre la naturaleza y el respeto a los animales envueltos en una trama entretenida.",
+    "calificacion": 3
+  },
+  {
+    "idPelicula": 6,
+    "autor": "Amanda V.",
+    "comentario": "Una secuela que supera a la original en muchos aspectos. Los mundos nuevos que exploran son visualmente impresionantes y la trama es mucho más épica.",
+    "calificacion": 5
+  },
+  {
+    "idPelicula": 6,
+    "autor": "Marco E.",
+    "comentario": "Espectacular en pantalla grande. El regreso de Mario y sus amigos al cine es una celebración perfecta para fans de todas las generaciones del videojuego.",
+    "calificacion": 5
+  },
+  {
+    "idPelicula": 6,
+    "autor": "Daniela Q.",
+    "comentario": "Muy entretenida aunque la trama es algo simple. Los efectos visuales y las referencias a los videojuegos compensan cualquier debilidad del argumento.",
+    "calificacion": 4
+  },
+  {
+    "idPelicula": 7,
+    "autor": "Tomás K.",
+    "comentario": "Una secuela muy bien construida. Judy y Nick siguen siendo un dúo fantástico y la nueva historia introduce personajes interesantes que enriquecen el universo.",
+    "calificacion": 5
+  },
+  {
+    "idPelicula": 7,
+    "autor": "Elena W.",
+    "comentario": "Mejor de lo esperado. La animación está a otro nivel y la trama de la conspiración mantiene el interés durante toda la película sin decaer en ningún momento.",
+    "calificacion": 4
+  },
+  {
+    "idPelicula": 7,
+    "autor": "Bruno Z.",
+    "comentario": "Buena pero no llega al nivel de la primera. Aun así es una propuesta sólida con buenos momentos de humor y acción que el público familiar va a disfrutar.",
+    "calificacion": 3
+  },
+  {
+    "idPelicula": 8,
+    "autor": "Lucía J.",
+    "comentario": "Una película que te deja pensando días después de verla. Cillian Murphy entrega una actuación extraordinaria que merece todos los premios que recibió.",
+    "calificacion": 5
+  },
+  {
+    "idPelicula": 8,
+    "autor": "Felipe X.",
+    "comentario": "Nolan en su mejor momento. La forma en que mezcla los tiempos narrativos es fascinante y la historia del dilema moral de Oppenheimer es devastadoramente buena.",
+    "calificacion": 5
+  },
+  {
+    "idPelicula": 8,
+    "autor": "Cristina Y.",
+    "comentario": "Muy buena aunque algo larga. El ritmo puede sentirse lento en algunos tramos pero las actuaciones y la dirección hacen que valga completamente la pena verla.",
+    "calificacion": 4
+  }
+]

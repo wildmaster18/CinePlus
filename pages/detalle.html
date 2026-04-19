@@ -2,126 +2,155 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Detalle de Película</title>
+    <title>Detalle de Película - CinePlus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Carga la tipografía Montserrat desde Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Carga Bootstrap para los estilos y componentes -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+
+    <!-- Carga los estilos personalizados del sitio -->
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <div class="container py-5">
-      <div class="text-center mb-4">
-        <!-- Muestra el título de la película -->
-        <h2 id="titulo" class="mb-3"></h2>
+    <!-- Barra de navegación igual a la del index -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid px-4">
+        <a class="navbar-brand" href="../index.html">CinePlus</a>
 
-        <!-- Alerta informativa fija para el visitante -->
-        <div class="alert alert-info" role="alert">
-          ¡Disfruta del tráiler oficial y conoce más sobre esta película!
-        </div>
+        <!-- Botón que muestra el menú en pantallas pequeñas -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+          aria-controls="navMenu"
+          aria-expanded="false"
+          aria-label="Abrir menú"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <!-- Reproductor del tráiler de YouTube -->
-        <div class="ratio ratio-16x9 mb-4">
-          <iframe id="trailer" src="" allowfullscreen></iframe>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <!-- Marca Inicio como página activa -->
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="renta.html">Rentar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html">Contacto</a>
+            </li>
+          </ul>
         </div>
       </div>
+    </nav>
 
-      <!-- Tarjeta con la imagen y la sinopsis de la película -->
-      <div class="card mb-4">
-        <div class="row g-0">
-          <div class="col-md-3">
-            <!-- Imagen del póster de la película -->
-            <img
-              id="poster"
-              src=""
-              class="img-fluid rounded-start"
-              alt="Poster de la película"
-              style="
-                width: 100%;
-                height: 400px;
-                object-fit: cover;
-                object-position: center;
-              "
-            />
+    <main class="container py-4">
+      <!-- Spinner visible mientras carga la información de la película -->
+      <div id="spinner-detalle" class="text-center py-5">
+        <div
+          class="spinner-border"
+          role="status"
+          style="width: 3rem; height: 3rem"
+        >
+          <span class="visually-hidden">Cargando...</span>
+        </div>
+        <p class="mt-3 fw-semibold">Cargando información de la película...</p>
+      </div>
+
+      <!-- Contenido principal, oculto hasta que el AJAX termina -->
+      <div id="info-pelicula" style="display: none">
+        <div class="text-center mb-4">
+          <!-- Muestra el título de la película -->
+          <h2 id="titulo" class="mb-3"></h2>
+
+          <!-- Badge dinámico que indica si es estreno o cartelera con su precio -->
+          <div id="badge-precio" class="mb-3"></div>
+
+          <!-- Alerta informativa fija para el visitante -->
+          <div class="alert alert-info" role="alert">
+            ¡Disfruta del tráiler oficial y conoce más sobre esta película!
           </div>
-          <div class="col-md-9">
-            <div
-              class="card-body d-flex flex-column justify-content-center"
-              style="min-height: 350px"
-            >
-              <h5 class="card-title">Sinopsis</h5>
 
-              <!-- Muestra la sinopsis de la película -->
-              <p id="sinopsis" class="card-text"></p>
+          <!-- Reproductor del tráiler de YouTube -->
+          <div class="ratio ratio-16x9 mb-4">
+            <iframe id="trailer" src="" allowfullscreen></iframe>
+          </div>
+        </div>
 
-              <!-- Contenedor donde se insertan los badges de géneros -->
-              <div id="generos"></div>
+        <!-- Tarjeta con la imagen y la sinopsis de la película -->
+        <div class="card mb-4">
+          <div class="row g-0">
+            <div class="col-md-3">
+              <!-- Imagen del póster de la película -->
+              <img
+                id="poster"
+                src=""
+                class="img-fluid rounded-start"
+                alt="Poster de la película"
+                style="
+                  width: 100%;
+                  height: 400px;
+                  object-fit: cover;
+                  object-position: center;
+                "
+              />
+            </div>
+            <div class="col-md-9">
+              <div
+                class="card-body d-flex flex-column justify-content-center"
+                style="min-height: 350px"
+              >
+                <h5 class="card-title">Sinopsis</h5>
+
+                <!-- Muestra la sinopsis de la película -->
+                <p id="sinopsis" class="card-text"></p>
+
+                <!-- Contenedor donde se insertan los badges de géneros -->
+                <div id="generos" class="mt-2"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="text-center">
-        <a href="../index.html" class="btn btn-secondary">Volver al inicio</a>
+        <!-- Sección de reseñas cargadas desde resenas.json via AJAX -->
+        <div class="mt-4 mb-4">
+          <h4 class="fw-bold mb-3">⭐ Reseñas del público</h4>
+          <div id="lista-resenas">
+            <p class="text-muted">Cargando reseñas...</p>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="../index.html" class="btn btn-secondary"
+            >← Volver al inicio</a
+          >
+        </div>
       </div>
-    </div>
+      <!-- fin info-pelicula -->
+    </main>
+
+    <!-- Pie de página del sitio -->
+    <footer class="footer-sitio text-center py-3">
+      <small>&copy; 2026 CinePlus. Todos los derechos reservados.</small>
+    </footer>
 
     <!-- Carga la librería jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
-      $(function () {
-        /* Lee el parámetro "id" de la URL para saber qué película mostrar */
-        const urlParams = new URLSearchParams(window.location.search);
-        const id = urlParams.get("id");
-
-        /* Carga el JSON y busca la película que coincide con el id */
-        $.ajax({
-          url: "../data/peliculas.json",
-          method: "GET",
-          dataType: "json",
-          success: function (peliculas) {
-            const peli = peliculas.find((p) => p.id == id);
-            if (peli) {
-              /* Asigna el título, sinopsis y tráiler en el HTML */
-              $("#titulo").text(peli.titulo);
-              $("#sinopsis").text(peli.sinopsis);
-              $("#trailer").attr("src", peli.trailer);
-
-              /* Construye la ruta de imagen según si es local o URL externa */
-              let rutaImg = peli.imagen.startsWith("http")
-                ? peli.imagen
-                : "../img/" + peli.imagen;
-              $("#poster").attr("src", rutaImg);
-
-              /* Recorre los géneros y genera un badge por cada uno */
-              let htmlGeneros = "";
-              for (let j = 0; j < peli.generos.length; j++) {
-                htmlGeneros += `<span class="badge bg-secondary me-1">${peli.generos[j]}</span>`;
-              }
-              $("#generos").html(htmlGeneros);
-            } else {
-              mostrarError();
-            }
-          },
-          error: function () {
-            mostrarError();
-          },
-        });
-
-        /* Muestra un mensaje si la película no se pudo cargar */
-        function mostrarError() {
-          $(".container").html(`
-            <div class="alert alert-danger text-center" role="alert">
-              No se pudo cargar la información de la película.
-            </div>
-            <div class="text-center">
-              <a href="../index.html" class="btn btn-secondary mt-3">Volver al inicio</a>
-            </div>
-          `);
-        }
-      });
-    </script>
+    <!-- Carga Bootstrap JS para el menú hamburguesa -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Carga la lógica de esta página -->
+    <script src="../js/detalle.js"></script>
   </body>
 </html>
